@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/safari', 'post_controller@index_safari')->name('safari')->middleware('auth');
-Route::get('/khotmil_alquran', 'post_controller@index_khotmil')->name('khotmil')->middleware('auth');
-Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi')->middleware('auth');
+Route::get('/safari', 'post_controller@index_safari')->name('safari');
+Route::get('/khotmil_alquran', 'post_controller@index_khotmil')->name('khotmil');
+Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi');
 Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth');
 Route::get('/', function () {
     return view('index');
@@ -26,9 +26,9 @@ Route::get('/', function () {
 
 Route::get('/about', function () {
     return view('about');
-})->name('about')->middleware('auth');
+})->name('about');
 
-Route::get('/detail_post/{id}', 'post_controller@show_post')->name('detail')->middleware('auth');
+Route::get('/detail_post/{id}', 'post_controller@show_post')->name('detail');
 
 Route::get('/detail/{id}', 'p_mengaji_controller@show')->middleware('auth')->name('detail_video');
 

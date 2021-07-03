@@ -95,7 +95,25 @@
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
-                                <li class="active">
+                                @guest
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
+                                    <ul class="fh5co-sub-menu">
+                                        <li><a href="{{route('safari')}}">Safari taklim</a></li>
+                                        <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
+                                        <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="{{route('about')}}">Tentang Kami</a>
+                                </li>
+                                @else
+                                <li>
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
@@ -117,6 +135,7 @@
                                 <li>
                                     <a href="{{route('about')}}">Tentang Kami</a>
                                 </li>
+                                @endguest
                                 @guest
                                 <li><a href="/login" class="btn btn-primary" style="margin-left: 1em">Login</a></li>
                                 @elseif(Auth::user()->type_user == '1')
@@ -214,8 +233,9 @@
                         </p>
                     </div>
                 </div>
-
-                @if(Auth::user()->type_user == '1')
+                @guest
+                <div></div>
+                @elseif(Auth::user()->type_user == '1')
                 <div class="container">
                     <div class="row">
                         <div class="col-md-4">
@@ -227,10 +247,10 @@
 
                     </div>
                 </div>
-                @endif
+                @endguest
 
             </div>
-            
+
 
             <!-- fh5co-content-section -->
 

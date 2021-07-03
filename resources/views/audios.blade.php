@@ -93,6 +93,24 @@
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
+                                @guest
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
+                                    <ul class="fh5co-sub-menu">
+                                        <li><a href="{{route('safari')}}">Safari taklim</a></li>
+                                        <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
+                                        <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
+
+                                    </ul>
+                                </li>
+
+                                <li>
+                                    <a href="{{route('about')}}">Tentang Kami</a>
+                                </li>
+                                @else
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
@@ -115,6 +133,7 @@
                                 <li>
                                     <a href="{{route('about')}}">Tentang Kami</a>
                                 </li>
+                                @endguest
                                 @guest
                                 <li><a href="/login" class="btn btn-primary" style="margin-left: 1em">Login</a></li>
                                 @elseif(Auth::user()->type_user == '1')
@@ -124,6 +143,7 @@
                                     </a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="/dashboard">Dashboard</a></li>
+                                        <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -143,7 +163,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="fh5co-sub-menu">
-
+                                        <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -201,8 +221,8 @@
                             <div class="col-md-4">
 
                                 <a href="{{route('edit_murrotal', ['id' => $value->id])}}" class="btn btn-primary btn-lg">Edit</a>
-                                
-                                <a href="{{ route('hapus_murrotal', ['id' => $value->id]) }}" class="btn btn-secondary btn-lg" style="margin-left: 2em;" >Hapus</a>
+
+                                <a href="{{ route('hapus_murrotal', ['id' => $value->id]) }}" class="btn btn-secondary btn-lg" style="margin-left: 2em;">Hapus</a>
 
                             </div>
 
