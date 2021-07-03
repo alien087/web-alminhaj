@@ -59,7 +59,7 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/dashboard_table">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>
                 </a>
