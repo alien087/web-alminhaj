@@ -82,7 +82,7 @@
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
@@ -99,7 +99,7 @@
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
@@ -108,7 +108,7 @@
 
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li >
                                     <a href="#" class="fh5co-sub-ddown">Edukasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('mengaji')}}">Mengaji Online</a></li>
@@ -196,7 +196,7 @@
                         @foreach($post as $key=>$value)
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="fh5co-blog animate-box">
-                                <a href="#"><img class="img-responsive" src="{{asset('images/'. $value->gambar1)}}" alt=""></a>
+                                <a href="{{route('detail', ['id' => $value->id])}}"><img class="img-responsive" src="{{asset('images/'. $value->gambar1)}}" alt=""></a>
                                 <div class="blog-text">
                                     <div class="prod-title">
                                         <h3><a href="{{route('detail', ['id' => $value->id])}}" #>{{$value->judul}}</a></h3>
@@ -210,9 +210,7 @@
                         @endforeach
 
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-4 text-center animate-box">
-                                <a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-                            </div>
+                           
                         </div>
 
                     </div>
@@ -234,14 +232,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                            <p class="fh5co-social-icons">
-                                <a href="#"><i class="icon-twitter2"></i></a>
-                                <a href="#"><i class="icon-facebook2"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
-                                <a href="#"><i class="icon-dribbble2"></i></a>
-                                <a href="#"><i class="icon-youtube"></i></a>
-                            </p>
-                            <p>Copyright 2016 Free Html5 <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                           
+                            <p>Copyright Majelis Taklim Al Minhaj</p>
                         </div>
                     </div>
                 </div>

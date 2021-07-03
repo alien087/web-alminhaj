@@ -69,7 +69,7 @@
 <body>
     <div id="fh5co-wrapper">
         <div id="fh5co-page">
-            
+
             <header id="fh5co-header-section" class="sticky-banner">
                 <div class="container">
                     <div class="nav-header">
@@ -77,7 +77,7 @@
                         <h1 id="fh5co-logo"><a href="index.html">Al Minhaj</a></h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
-                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <ul class="sf-menu" id="fh5co-primary-menu">
                                 @guest
                                 <li class="active">
                                     <a href="/">Home</a>
@@ -175,7 +175,7 @@
                 <div class="fh5co-overlay"></div>
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
                     <div class="desc animate-box">
-                        <h2><strong>Nama</strong> ORGANISASI</strong></h2>
+                        <h2><strong>MAJELIS TAKLIM AL MINHAJ</strong></h2>
                         <span></span>
                         <span><a class="btn btn-primary btn-lg" href="#">Gabung Bersama Kami</a></span>
                     </div>
@@ -521,14 +521,7 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3 text-center">
-                                <p class="fh5co-social-icons">
-                                    <a href="#"><i class="icon-twitter2"></i></a>
-                                    <a href="#"><i class="icon-facebook2"></i></a>
-                                    <a href="#"><i class="icon-instagram"></i></a>
-                                    <a href="#"><i class="icon-dribbble2"></i></a>
-                                    <a href="#"><i class="icon-youtube"></i></a>
-                                </p>
-                                <p>Copyright 2016 Free Html5 <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
+                                <p>Copyright Majelis Taklim Al Minhaj</p>
                             </div>
                         </div>
                     </div>

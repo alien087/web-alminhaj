@@ -196,7 +196,7 @@
                         @foreach($post as $key=>$value)
                         <div class="col-lg-4 col-md-4 col-sm-6">
                             <div class="fh5co-blog animate-box">
-                                <a href="#"><img class="img-responsive" src="https://img.youtube.com/vi/{{\Illuminate\Support\Str::substr($value->link, 17)}}/0.jpg" alt=""></a>
+                                <a href="{{route('detail_video', ['id' => $value->id])}}"><img class="img-responsive" src="https://img.youtube.com/vi/{{\Illuminate\Support\Str::substr($value->link, 17)}}/0.jpg" alt=""></a>
                                 <div class="blog-text">
                                     <div class="prod-title">
                                         <h3><a href="{{route('detail_video', ['id' => $value->id])}}" #>{{$value->judul}}</a></h3>
@@ -234,15 +234,9 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                            <p class="fh5co-social-icons">
-                                <a href="#"><i class="icon-twitter2"></i></a>
-                                <a href="#"><i class="icon-facebook2"></i></a>
-                                <a href="#"><i class="icon-instagram"></i></a>
-                                <a href="#"><i class="icon-dribbble2"></i></a>
-                                <a href="#"><i class="icon-youtube"></i></a>
-                            </p>
-                            <p>Copyright 2016 Free Html5 <a href="#">Charity</a>. All Rights Reserved. <br>Made with <i class="icon-heart3"></i> by <a href="http://freehtml5.co/" target="_blank">Freehtml5.co</a> / Demo Images: <a href="https://unsplash.com/" target="_blank">Unsplash</a></p>
-                        </div>
+                           
+                        <p>Copyright Majelis Taklim Al Minhaj</p>
+                    </div>
                     </div>
                 </div>
             </div>
