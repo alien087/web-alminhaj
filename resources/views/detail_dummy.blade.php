@@ -267,7 +267,7 @@
                 <div class="modal-body">Jika iya, pilih tombol "Iya"</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('hapus_post', ['id' => $value->id]) }}">Iya</a>
+                    <a class="btn btn-primary" href="">Iya</a>
                 </div>
             </div>
         </div>
