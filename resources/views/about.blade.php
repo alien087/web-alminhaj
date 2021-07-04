@@ -70,7 +70,21 @@
 <body>
     <div id="fh5co-wrapper">
         <div id="fh5co-page">
-            
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 text-left fh5co-link">
+                            <a href="#"> <b> WA: +62 813-1745-4322</b></a>
+
+
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-right fh5co-social">
+                            <a href="#"> <b>Email: Taklimalminhaj@gmail.com</b> </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <header id="fh5co-header-section" class="sticky-banner">
                 <div class="container">
                     <div class="nav-header">
@@ -89,7 +103,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
 
@@ -106,7 +120,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -176,7 +190,8 @@
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_2.jpg);">
                     <div class="desc animate-box">
                         <h2><strong>MAJELIS TAKLIM AL MINHAJ</strong></h2>
-                        <span>Penjelasan Singkat</span>
+                        <span>WA: +62 813-1745-4322 <br> Email: taklimalminhaj@gmail.com</span>
+
 
                     </div>
                 </div>
@@ -285,19 +300,21 @@
                 <!-- fh5co-content-section -->
 
 
-                <footer>
-                    <div id="footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-md-6 col-md-offset-3 text-center">
-                                <p>Copyright Majelis Taklim Al Minhaj</p></div>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
 
 
             </div>
+            <footer>
+                <div id="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3 text-center">
+                                <p>Copyright Majelis Taklim Al Minhaj</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
             <!-- END fh5co-page -->
 
         </div>
@@ -323,7 +340,7 @@
 
         <!-- Main JS -->
         <script src="{{asset('js/main.js')}}"></script>
-
+    </div>
 </body>
 
 </html>

@@ -69,7 +69,21 @@
 <body>
     <div id="fh5co-wrapper">
         <div id="fh5co-page">
-            
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 text-left fh5co-link">
+                            <a href="#"> <b> WA: +62 813-1745-4322</b></a>
+
+
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-right fh5co-social">
+                            <a href="#"> <b>Email: Taklimalminhaj@gmail.com</b> </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <header id="fh5co-header-section" class="sticky-banner">
                 <div class="container">
                     <div class="nav-header">
@@ -77,7 +91,7 @@
                         <h1 id="fh5co-logo"><a href="index.html">Al Minhaj</a></h1>
                         <!-- START #fh5co-menu-wrap -->
                         <nav id="fh5co-menu-wrap" role="navigation">
-                        <ul class="sf-menu" id="fh5co-primary-menu">
+                            <ul class="sf-menu" id="fh5co-primary-menu">
                                 @guest
                                 <li>
                                     <a href="/">Home</a>
@@ -88,7 +102,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
 
@@ -105,10 +119,10 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
-                                <li >
+                                <li>
                                     <a href="#" class="fh5co-sub-ddown">Edukasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('mengaji')}}">Mengaji Online</a></li>
@@ -186,8 +200,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Motto Safari Taklim</h3>
-                            <p>Penjelsana Singkat Tentang Safari Taklim</p>
+                            <h3>Safari Taklim</h3>
+                            <p>Safari taklim adalah kegiatan tahunan majelis taklim Al Minhaj. Kegiatan ini diadakan setahun sekali dengan mengadakan acara di vila daerah Bogor. Kegiatan ini bertujuan untuk mempererat tali silaturahmi antar sesama anggota dan memperkuat keimanan.</p>
                         </div>
                     </div>
                 </div>
@@ -210,7 +224,7 @@
                         @endforeach
 
                         <div class="row">
-                           
+
                         </div>
 
                     </div>
@@ -232,7 +246,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                           
+
                             <p>Copyright Majelis Taklim Al Minhaj</p>
                         </div>
                     </div>

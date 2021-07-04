@@ -93,7 +93,7 @@
                         <nav id="fh5co-menu-wrap" role="navigation">
                             <ul class="sf-menu" id="fh5co-primary-menu">
                                 @guest
-                                <li>
+                                <li class="active">
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
@@ -103,6 +103,7 @@
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
                                         <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
+
                                     </ul>
                                 </li>
 
@@ -110,7 +111,7 @@
                                     <a href="{{route('about')}}">Tentang Kami</a>
                                 </li>
                                 @else
-                                <li>
+                                <li class="active">
                                     <a href="/">Home</a>
                                 </li>
                                 <li>
@@ -120,9 +121,10 @@
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
                                         <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
+
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="#" class="fh5co-sub-ddown">Edukasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('mengaji')}}">Mengaji Online</a></li>
@@ -189,8 +191,11 @@
                 <div class="fh5co-overlay"></div>
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
                     <div class="desc animate-box">
-                        <h2>Mendengar Murrotal <strong>Bersama Al Minhaj</strong></h2>
-                        <span>Mengaji Bersama oleh Al Minhaj </span>
+                        <h2><strong>Media informasi <br> Majelis Taklim Al Minhaj</strong></h2>
+                        <span></span>
+                        @guest
+                        <span><a class="btn btn-primary btn-lg" href="/register">Gabung Bersama Kami</a></span>
+                        @endguest
                     </div>
                 </div>
 
@@ -200,54 +205,74 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Motto Murrotal</h3>
-                            <p>Penjelasan Singkat Tentang Murrotal Online</p>
+                            <h3>Berita Terbaru </h3>
+
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                    @foreach($post as $key=>$value)
+                    <div class="row row-bottom-padded-lg">
 
-                    <h2>{{$value->judul}}</h2>
-                    <audio controls style="width:100%; margin-bottom: 2em;">
-
-                        <source src="{{asset('audio/'.$value->file)}}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    @if(Auth::user()->type_user == '1')
-                    <div class="container" style="margin-bottom: 2em">
-                        <div class="row">
-                            <div class="col-md-4">
-
-                                <a href="{{route('edit_murrotal', ['id' => $value->id])}}" class="btn btn-primary btn-lg">Edit</a>
-
-                                <a href="{{ route('hapus_murrotal', ['id' => $value->id]) }}" class="btn btn-secondary btn-lg" style="margin-left: 2em;">Hapus</a>
-
-                            </div>
-
-                        </div>
-                    </div>
-                    @endif
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda Yakin ingin menghapusnya?</h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">Jika iya, pilih tombol "Iya"</div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                    <a class="btn btn-primary" href="">Iya</a>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="fh5co-blog animate-box">
+                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
+                                <div class="blog-text">
+                                    <div class="prod-title">
+                                        <h3><a href="/detailss" #>Berita Terbaru 1</a></h3>
+                                        <span class="posted_by">Sep. 15th</span>
+                                        <p>Contoh isi</p>
+                                        <p><a href="/detailss">Learn More...</a></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="fh5co-blog animate-box">
+                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
+                                <div class="blog-text">
+                                    <div class="prod-title">
+                                        <h3><a href="/detailss" #>Berita Terbaru 2</a></h3>
+                                        <span class="posted_by">Sep. 15th</span>
+                                        <p>Contoh isi</p>
+                                        <p><a href="/detailss">Learn More...</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="fh5co-blog animate-box">
+                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
+                                <div class="blog-text">
+                                    <div class="prod-title">
+                                        <h3><a href="/detailss" #>Berita Terbaru 3</a></h3>
+                                        <span class="posted_by">Sep. 15th</span>
+                                        <p>Contoh isi</p>
+                                        <p><a href="/detailss">Learn More...</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <div class="fh5co-blog animate-box">
+                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
+                                <div class="blog-text">
+                                    <div class="prod-title">
+                                        <h3><a href="/detailss" #>Berita Terbaru 4</a></h3>
+                                        <span class="posted_by">Sep. 15th</span>
+                                        <p>Contoh isi</p>
+                                        <p><a href="/detailss">Learn More...</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
                     </div>
-                    @endforeach
                 </div>
                 <!-- fh5co-blog-section -->
+
 
 
 
@@ -256,20 +281,24 @@
             <!-- END fh5co-page -->
 
         </div>
-        <!-- END fh5co-wrapper -->
 
-        <!-- jQuery -->
+        <!-- END fh5co-wrapper -->
         <footer>
             <div id="footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                            <p>Copyright Majelis Taklim Al Minhaj</p>/div>
+
+                            <p>Copyright Majelis Taklim Al Minhaj</p>
                         </div>
                     </div>
                 </div>
+            </div>
         </footer>
     </div>
+    <!-- jQuery -->
+
+
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <!-- jQuery Easing -->
     <script src="{{asset('js/jquery.easing.1.3.js')}}"></script>

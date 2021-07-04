@@ -18,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/safari', 'post_controller@index_safari')->name('safari');
 Route::get('/khotmil_alquran', 'post_controller@index_khotmil')->name('khotmil');
 Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi');
+Route::get('/pengajian', 'post_controller@index_pengajian')->name('pengajian');
+
 Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth');
 Route::get('/', function () {
-    return view('index');
+    return view('index_2');
 })->name('index');
 
 
@@ -48,7 +50,9 @@ Route::get('/all_user', 'admin_controller@index_all')->middleware('auth')->middl
 Route::get('/all_user/{id}', 'admin_controller@edit_admin')->middleware('auth')->middleware('is_admin')->name('edit_admin');
 Route::get('/all_users/{id}', 'admin_controller@edit_biasa')->middleware('auth')->middleware('is_admin')->name('edit_biasa');
 
-
+Route::get('/detailss', function () {
+    return view('detail_dummy');
+})->name('ddummy');
 
 Auth::routes();
 Route::get('/register_user', function () {

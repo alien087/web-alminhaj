@@ -75,14 +75,13 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-sm-6 text-left fh5co-link">
-                            <a href="#">FAQ</a>
-                            <a href="#">Forum</a>
-                            <a href="#">Contact</a>
+                            <a href="#"> <b> WA: +62 813-1745-4322</b></a>
+
+
                         </div>
                         <div class="col-md-6 col-sm-6 text-right fh5co-social">
-                            <a href="#" class="grow"><i class="icon-facebook2"></i></a>
-                            <a href="#" class="grow"><i class="icon-twitter2"></i></a>
-                            <a href="#" class="grow"><i class="icon-instagram2"></i></a>
+                            <a href="#"> <b>Email: Taklimalminhaj@gmail.com</b> </a>
+
                         </div>
                     </div>
                 </div>
@@ -105,7 +104,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
 
@@ -122,7 +121,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -263,7 +262,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                        <p>Copyright Majelis Taklim Al Minhaj</p>
+                            <p>Copyright Majelis Taklim Al Minhaj</p>
                         </div>
                     </div>
                 </div>

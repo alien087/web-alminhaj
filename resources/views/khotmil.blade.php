@@ -70,7 +70,21 @@
 <body>
     <div id="fh5co-wrapper">
         <div id="fh5co-page">
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-6 text-left fh5co-link">
+                            <a href="#"> <b> WA: +62 813-1745-4322</b></a>
 
+
+                        </div>
+                        <div class="col-md-6 col-sm-6 text-right fh5co-social">
+                            <a href="#"> <b>Email: Taklimalminhaj@gmail.com</b> </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <header id="fh5co-header-section" class="sticky-banner">
                 <div class="container">
                     <div class="nav-header">
@@ -89,7 +103,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
 
@@ -106,7 +120,7 @@
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
                                         <li><a href="{{route('khotmil')}}">Khotmil Al Qur'an</a></li>
                                         <li><a href="{{route('berbagi')}}">Al minhaj berbagi</a></li>
-
+                                        <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
                                 <li>
@@ -187,8 +201,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Motto Khotmil Al-Quran</h3>
-                            <p>Penjelasan Singkat Tentang Khotmil Al Quran</p>
+                            <h3>Khotmil Al-Quran</h3>
+                            <p>Khotmil Al Quran adalah kegiatan membaca Al Quran sampai khatam. Kegiatan khotmil Al Quran akan dibimbing oleh ustad-ustad kami.</p>
                         </div>
                     </div>
                 </div>
@@ -212,9 +226,7 @@
 
 
                         <div class="row">
-                            <div class="col-md-4 col-md-offset-4 text-center animate-box">
-                                <a href="#" class="btn btn-primary btn-lg">Our Blog</a>
-                            </div>
+
                         </div>
 
                     </div>

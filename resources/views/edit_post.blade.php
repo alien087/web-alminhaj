@@ -199,14 +199,22 @@
                                             <option>Safari Taklim</option>
                                             <option selected>Al Minhaj Berbagi</option>
                                             <option>Khotmil Al-Quran</option>
+                                            <option>Pengajian Rutin</option>
                                             @elseif($value->kategori=='2')
                                             <option selected>Safari Taklim</option>
                                             <option>Al Minhaj Berbagi</option>
                                             <option>Khotmil Al-Quran</option>
+                                            <option>Pengajian Rutin</option>
+                                            @elseif($value->kategori=='4')
+                                            <option >Safari Taklim</option>
+                                            <option>Al Minhaj Berbagi</option>
+                                            <option>Khotmil Al-Quran</option>
+                                            <option selected>Pengajian Rutin</option>
                                             @else
                                             <option>Safari Taklim</option>
                                             <option>Al Minhaj Berbagi</option>
                                             <option selected>Khotmil Al-Quran</option>
+                                            <option>Pengajian Rutin</option>
                                             @endif
                                         </select>
                                         <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 1</h1>

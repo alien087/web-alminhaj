@@ -198,6 +198,7 @@
                                             <option selected>Safari Taklim</option>
                                             <option>Al Minhaj Berbagi</option>
                                             <option>Khotmil Al-Quran</option>
+                                            <option>Pengajian Rutin</option>
                                         </select>
                                         <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 1*</h1>
                                         <input type="file" name="image1" class="form-control" style="margin-top: 1em;" accept="image/*" required>

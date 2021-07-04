@@ -18,6 +18,11 @@ class post_controller extends Controller
         $post = post::where('kategori', 2)->get();
         return view('safari', ['post' => $post]);
     }
+    public function index_pengajian()
+    {
+        $post = post::where('kategori', 4)->get();
+        return view('pengajian', ['post' => $post]);
+    }
 
     public function index_khotmil()
     {
@@ -87,7 +92,10 @@ class post_controller extends Controller
             $post->kategori = 1;
         } elseif ($request->kategori == "Safari Taklim") {
             $post->kategori = 2;
-        } else {
+        } elseif($request->kategori == "Pengajian Rutin"){
+            $post->kategori = 4;
+        }
+        else {
             $post->kategori = 3;
         }
         // $post->kategori = $request->kategori;
@@ -173,6 +181,8 @@ class post_controller extends Controller
             $post->kategori = 1;
         } elseif ($request->kategori == "Safari Taklim") {
             $post->kategori = 2;
+        } elseif($request->kategori == "Pengajian Rutin"){
+            $post->kategori = 4;
         } else {
             $post->kategori = 3;
         }

@@ -46,6 +46,7 @@
     <!-- <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel='stylesheet' type='text/css'> -->
 
     <!-- Animate.css -->
+    <!-- Animate.css -->
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
     <!-- Icomoon Icon Fonts-->
     <link rel="stylesheet" href="{{asset('css/icomoon.css')}}">
@@ -96,7 +97,7 @@
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
@@ -113,7 +114,7 @@
                                 <li>
                                     <a href="/">Home</a>
                                 </li>
-                                <li>
+                                <li class="active">
                                     <a href="#" class="fh5co-sub-ddown">Kegiatan Organisasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('safari')}}">Safari taklim</a></li>
@@ -122,7 +123,7 @@
                                         <li><a href="{{route('pengajian')}}">Pengajian Rutin</a></li>
                                     </ul>
                                 </li>
-                                <li class="active">
+                                <li>
                                     <a href="#" class="fh5co-sub-ddown">Edukasi</a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="{{route('mengaji')}}">Mengaji Online</a></li>
@@ -189,8 +190,8 @@
                 <div class="fh5co-overlay"></div>
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
                     <div class="desc animate-box">
-                        <h2>Mendengar Murrotal <strong>Bersama Al Minhaj</strong></h2>
-                        <span>Mengaji Bersama oleh Al Minhaj </span>
+                        <h2>Pengajian <strong>Rutin</strong></h2>
+                        <span>Pengajian Rutin oleh Al Minhaj </span>
                     </div>
                 </div>
 
@@ -200,55 +201,37 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Motto Murrotal</h3>
-                            <p>Penjelasan Singkat Tentang Murrotal Online</p>
+                            <h3>Pengajian Rutin</h3>
+                            <p>Pengajian rutin adalah kegiatan regular majelis taklim Al Minhaj. Kegiatan ini berisi dakwah dan mengajarkan ilmu-ilmu yang ada di dalam Islam yang diikuti oleh seluruh anggota majelis taklim Al Minhaj. Kegiatan ini diadakan di masjid al minhaj.</p>
                         </div>
                     </div>
                 </div>
                 <div class="container">
-                    @foreach($post as $key=>$value)
+                    <div class="row row-bottom-padded-md">
+                        @foreach($post as $key=>$value)
+                        <div class="col-lg-4 col-md-4 col-sm-6">
+                            <div class="fh5co-blog animate-box">
+                                <a href="{{route('detail', ['id' => $value->id])}}"><img class="img-responsive" src="{{asset('images/'. $value->gambar1)}}" alt=""></a>
+                                <div class="blog-text">
+                                    <div class="prod-title">
+                                        <h3><a href="{{route('detail', ['id' => $value->id])}}" #>{{$value->judul}}</a></h3>
+                                        <span class="posted_by">Sep. 15th</span>
+                                        <p>{!!\Illuminate\Support\Str::limit($value->isi, 25, $end='...')!!}</p>
+                                        <p><a href="{{route('detail', ['id' => $value->id])}}">Learn More...</a></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        @endforeach
 
-                    <h2>{{$value->judul}}</h2>
-                    <audio controls style="width:100%; margin-bottom: 2em;">
 
-                        <source src="{{asset('audio/'.$value->file)}}" type="audio/mpeg">
-                        Your browser does not support the audio element.
-                    </audio>
-                    @if(Auth::user()->type_user == '1')
-                    <div class="container" style="margin-bottom: 2em">
                         <div class="row">
-                            <div class="col-md-4">
-
-                                <a href="{{route('edit_murrotal', ['id' => $value->id])}}" class="btn btn-primary btn-lg">Edit</a>
-
-                                <a href="{{ route('hapus_murrotal', ['id' => $value->id]) }}" class="btn btn-secondary btn-lg" style="margin-left: 2em;">Hapus</a>
-
-                            </div>
 
                         </div>
+
                     </div>
-                    @endif
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title" id="exampleModalLabel">Apakah anda Yakin ingin menghapusnya?</h5>
-                                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">Jika iya, pilih tombol "Iya"</div>
-                                <div class="modal-footer">
-                                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                    <a class="btn btn-primary" href="">Iya</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    @endforeach
                 </div>
                 <!-- fh5co-blog-section -->
-
 
 
 
@@ -259,16 +242,19 @@
         <!-- END fh5co-wrapper -->
 
         <!-- jQuery -->
+
         <footer>
             <div id="footer">
                 <div class="container">
                     <div class="row">
                         <div class="col-md-6 col-md-offset-3 text-center">
-                            <p>Copyright Majelis Taklim Al Minhaj</p>/div>
+                            <p>Copyright Majelis Taklim Al Minhaj</p>
                         </div>
                     </div>
                 </div>
+            </div>
         </footer>
+
     </div>
     <script src="{{asset('js/jquery.min.js')}}"></script>
     <!-- jQuery Easing -->
