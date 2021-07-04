@@ -209,7 +209,7 @@
                                             
                                             <td><a href="{{route('edit_verified',  ['id' => $value->id])}}" class="btn btn-info btn-icon-split btn-sm">
                                                     <span class="icon text-white-50">
-                                                        <i class="fas fa-trash"></i>
+                                                        <i class="fas fa-edit"></i>
                                                     </span>
                                                     <span class="text">Verifikasi User</span>
                                                 </a>
