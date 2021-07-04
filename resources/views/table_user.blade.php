@@ -71,6 +71,12 @@
                     <span>Semua User Aktif</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/verified_user">
+                    <i class="fas fa-fw fa-cog"></i>
+                    <span>Verifikasi User</span>
+                </a>
+            </li>
 
             <!-- Nav Item - Utilities Collapse Menu -->
 

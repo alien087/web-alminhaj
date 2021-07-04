@@ -9,14 +9,17 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Al Minhaj - Dashboard</title>
+    <title>Al Minhaj - Tables</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -40,7 +43,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -51,7 +54,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                User Control
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -60,10 +63,15 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>
                 </a>
+
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/all_user">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Semua User Aktif</span>
                 </a>
+            </li>
+            <li class="nav-item active">
                 <a class="nav-link" href="/verified_user">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Verifikasi User</span>
@@ -86,7 +94,7 @@
             </div>
 
             <!-- Sidebar Message -->
-           
+
         </ul>
         <!-- End of Sidebar -->
 
@@ -100,9 +108,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
 
@@ -139,7 +149,7 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ Auth::user()->name }}</span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
                                 <img class="img-profile rounded-circle" src="{{asset('images/undraw_profile.svg')}}">
                             </a>
                             <!-- Dropdown - User Information -->
@@ -149,7 +159,7 @@
                                     Edit Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -157,7 +167,6 @@
                         </li>
 
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -165,52 +174,56 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Tambah Murrotal</h1>
-
-                    </div>
-
-                    <!-- Content Row -->
-
-                    <!-- Content Row -->
+                    <h1 class="h3 mb-2 text-gray-800">Data User</h1>
 
 
-                    @if ($message = Session::get('success'))
-                    <div class="alert alert-success alert-block">
-                        <button type="button" class="close" data-dismiss="alert">×</button>
-                        <strong>{{ $message }}</strong>
-                    </div>
-
-                    @endif
-                    <!-- Content Row -->
-                    <div class="row">
-
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-
-                            <form action="{{ route('upload_murrotal') }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h1 class="h5 mb-0 text-gray-800">Judul*</h1>
-                                        <input type="text" name="judul" class="form-control" style="margin-top: 1em;" required>
-
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">File Murrotal*</h1>
-                                        <input type="file" name="murrotal" class="form-control" style="margin-top: 1em;" accept="audio/*" required>
-
-
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">*Wajib Diisi</h1>
-                                        <button type="submit" class="btn btn-success" style="margin-top: 2em;">Create</button>
-                                    </div>
-                                </div>
-
-                            </form>
-
-                            <!-- Color System -->
-
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-primary">DataTables User</h6>
                         </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Alamat</th>
+                                            <th>Nomor HP</th>
+                                            <th>Tanggal Lahir</th>
+                                            <th>Last Login</th>
+                                            <th>Verifikasi</th>
+                                           
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($post as $key=>$value)
+                                        <tr>
+                                            <td>{{$value->name}}</td>
+                                            <td>{{$value->email}}</td>
+                                            <td>{{$value->alamat}}</td>
+                                            <td>{{$value->no_hp}}</td>
+                                            <td>{{$value->tgl_lahir}}</td>
+                                            <td>{{$value->last_login}}</td>
+                                            
+                                            <td><a href="{{route('edit_verified',  ['id' => $value->id])}}" class="btn btn-info btn-icon-split btn-sm">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Verifikasi User</span>
+                                                </a>
 
-
+                                            </td>
+                                          
+                                     
+                                           
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
@@ -223,7 +236,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                    <p>Copyright Majelis Taklim Al Minhaj</p>
+                        <span>Copyright Majelis Taklim Al Minhaj</span>
                     </div>
                 </div>
             </footer>
@@ -263,7 +276,6 @@
         </div>
     </div>
 
-
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -275,22 +287,14 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+
+
+    <!-- Page level plugins -->
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#editor'), {
-                toolbar: ['bold', 'italic', 'link', 'undo', 'redo', 'numberedList', 'bulletedList']
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-
+    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
 
 </body>
 

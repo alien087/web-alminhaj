@@ -14,13 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Auth::routes(['verify' => true]);
 
 Route::get('/safari', 'post_controller@index_safari')->name('safari');
 Route::get('/khotmil_alquran', 'post_controller@index_khotmil')->name('khotmil');
 Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi');
 Route::get('/pengajian', 'post_controller@index_pengajian')->name('pengajian');
 
-Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth');
+Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth')->middleware('is_verified');
 Route::get('/', function () {
     return view('index_2');
 })->name('index');
@@ -32,7 +33,7 @@ Route::get('/about', function () {
 
 Route::get('/detail_post/{id}', 'post_controller@show_post')->name('detail');
 
-Route::get('/detail/{id}', 'p_mengaji_controller@show')->middleware('auth')->name('detail_video');
+Route::get('/detail/{id}', 'p_mengaji_controller@show')->middleware('auth')->name('detail_video')->middleware('is_verified');
 
 // Route::get('/detail1', function () {
 //     return view('detail_video');
@@ -49,6 +50,9 @@ Route::get('/dashboard_tables/{id}', 'admin_controller@edit_aktif')->middleware(
 Route::get('/all_user', 'admin_controller@index_all')->middleware('auth')->middleware('is_admin')->name('table_all_user');
 Route::get('/all_user/{id}', 'admin_controller@edit_admin')->middleware('auth')->middleware('is_admin')->name('edit_admin');
 Route::get('/all_users/{id}', 'admin_controller@edit_biasa')->middleware('auth')->middleware('is_admin')->name('edit_biasa');
+
+Route::get('/verified_user', 'admin_controller@index_verified')->middleware('auth')->middleware('is_admin')->name('table_verified');
+Route::get('/verified_user/{id}', 'admin_controller@edit_verified')->middleware('auth')->middleware('is_admin')->name('edit_verified');
 
 Route::get('/detailss', function () {
     return view('detail_dummy');
@@ -76,7 +80,7 @@ Route::get('/delete_mengaji/{id}', 'p_mengaji_controller@destroy')->name('hapus_
 Route::get('edit_mengaji/{id}', 'p_mengaji_controller@edit')->name('edit_mengaji')->middleware('auth')->middleware('is_admin');
 Route::post('edit_mengaji/{id}', 'p_mengaji_controller@update')->name('edits_mengaji')->middleware('auth')->middleware('is_admin');
 
-Route::get('/murrotal', 'murrotal_controller@index')->name('audios')->middleware('auth');
+Route::get('/murrotal', 'murrotal_controller@index')->name('audios')->middleware('auth')->middleware('is_verified');
 
 Route::get('new_audio', function () {
     return view('new_audio');

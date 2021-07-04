@@ -287,7 +287,7 @@
                         <div class="row">
                             <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
                                 <h3>Lokasi</h3>
-                                <p>Alamat Lengkap</p>
+                                <p>Jl. H. Joko RT 01 RW 03 no. 45 <br> Kelurahan Lenteng Agung, Kecamatan Jagakarsa <br> Jakarta Selatan 12610</p>
                             </div>
                         </div>
                     </div>
