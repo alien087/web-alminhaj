@@ -16,7 +16,7 @@ class admin_controller extends Controller
     }
     public function index_all()
     {
-       $post = user::where('is_aktif', '1')->get();
+       $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
     public function index_verified()
@@ -61,7 +61,7 @@ class admin_controller extends Controller
             'type_user' => '1'
         ]);
 
-        $post = user::all();
+        $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
 
@@ -71,7 +71,7 @@ class admin_controller extends Controller
             'type_user' => '0'
         ]);
 
-        $post = user::all();
+        $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
 }
