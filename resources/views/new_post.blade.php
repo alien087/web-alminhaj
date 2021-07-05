@@ -206,13 +206,13 @@
                                         </select>
                                         <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 1*</h1>
                                         <input type="file" name="image1" class="form-control" style="margin-top: 1em;" accept="image/*" required>
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 2*</h1>
+                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 2</h1>
                                         <input type="file" name="image2" class="form-control" style="margin-top: 1em;" accept="image/*">
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 3*</h1>
+                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 3</h1>
                                         <input type="file" name="image3" class="form-control" style="margin-top: 1em;" accept="image/*">
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 4*</h1>
+                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 4</h1>
                                         <input type="file" name="image4" class="form-control" style="margin-top: 1em;" accept="image/*">
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 5*</h1>
+                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Gambar 5</h1>
                                         <input type="file" name="image5" class="form-control" style="margin-top: 1em;" accept="image/*">
 
                                         <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">*Wajib Diisi</h1>
