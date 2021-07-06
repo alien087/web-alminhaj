@@ -14,7 +14,7 @@ class p_mengaji_controller extends Controller
      */
     public function index()
     {
-        $post = post_mengaji::all();
+        $post = post_mengaji::paginate(9);
         return view('mengaji', ['post' => $post]);
     }
 

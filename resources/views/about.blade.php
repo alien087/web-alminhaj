@@ -209,7 +209,7 @@
 
                     <div class="row row-bottom-padded-md">
                         <div class="col-md-12 text-center animate-box">
-                            <p><img src="{{asset('images/cover_bg_1.jpg')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive"></p>
+                            <img src="{{asset('images/SO.png')}}" alt="Free HTML5 Bootstrap Template" class="img-responsive" style="display: inline;">
                         </div>
 
 

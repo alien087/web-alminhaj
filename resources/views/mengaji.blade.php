@@ -223,10 +223,11 @@
                         </div>
                         @endforeach
 
-                        <div class="row">
+                       
 
-                        </div>
-
+                    </div>
+                    <div class="row">
+                        {!! $post->links() !!}
                     </div>
                 </div>
                 <!-- fh5co-blog-section -->

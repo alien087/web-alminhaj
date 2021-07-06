@@ -215,7 +215,7 @@
                                 <div class="blog-text">
                                     <div class="prod-title">
                                         <h3><a href="{{route('detail', ['id' => $value->id])}}" #>{{$value->judul}}</a></h3>
-                                        <span class="posted_by">Sep. 15th</span>
+                                        <span class="posted_by">{!!\Illuminate\Support\Str::limit($value->created_at, 10, $end='')!!}</span>
                                         <p>{!!\Illuminate\Support\Str::limit($value->isi, 25, $end='...')!!}</p>
                                         <p><a href="{{route('detail', ['id' => $value->id])}}">Learn More...</a></p>
                                     </div>
@@ -225,10 +225,11 @@
                         @endforeach
 
 
-                        <div class="row">
+                     
 
-                        </div>
-
+                    </div>
+                    <div class="row">
+                        {!! $post->links() !!}
                     </div>
                 </div>
                 <!-- fh5co-blog-section -->

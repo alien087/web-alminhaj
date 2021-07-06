@@ -14,7 +14,7 @@ class murrotal_controller extends Controller
      */
     public function index()
     {
-        $post = murrotal::all();
+        $post = murrotal::paginate(9);
         return view('audios', ['post' => $post]);
     }
 

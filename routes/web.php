@@ -90,5 +90,5 @@ Route::get('/delete_murrotal/{id}', 'murrotal_controller@destroy')->name('hapus_
 Route::get('edit_murrotal/{id}', 'murrotal_controller@edit')->name('edit_murrotal')->middleware('auth')->middleware('is_admin');
 Route::post('edit_murrotal/{id}', 'murrotal_controller@update')->name('update_murrotal')->middleware('auth')->middleware('is_admin');
 
-Route::get('edit_profile/{id}', 'user_controller@edit')->name('edit_user')->middleware('auth');
-Route::post('edit_profile/{id}', 'user_controller@update')->name('update_user')->middleware('auth');
+Route::get('edit_profile/{id}', 'user_controller@edit')->name('edit_user')->middleware('auth')->middleware('is_verified');
+Route::post('edit_profile/{id}', 'user_controller@update')->name('update_user')->middleware('auth')->middleware('is_verified');
