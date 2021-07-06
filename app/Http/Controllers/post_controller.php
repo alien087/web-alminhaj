@@ -38,7 +38,7 @@ class post_controller extends Controller
 
     public function show_post($id)
     {
-        $post = post::where('id', $id);
+        $post = post::where('id', $id)->get();
         return view('detail', ['post' => $post]);
     }
 
@@ -124,7 +124,8 @@ class post_controller extends Controller
      */
     public function show($id)
     {
-        //
+        $post = post::where('id', $id)->get();
+        return view('edit_post', ['post' => $post]);
     }
 
     /**

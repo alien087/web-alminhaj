@@ -197,34 +197,48 @@
                             <img src="{{asset('images/'.$value->gambar1)}}" style="width: 100%" />
                             <div class="text">Gambar Kegiatan 1</div>
                         </div>
-
+                        @if(!empty($value->gambar2))
                         <div class="mySlides">
                             <img src="{{asset('images/'.$value->gambar2)}}" style="width: 100%" />
                             <div class="text">Gambar Kegiatan 2</div>
                         </div>
+                        @endif
+                        @if(!empty($value->gambar3))
                         <div class="mySlides">
                             <img src="{{asset('images/'. $value->gambar3)}}" style="width: 100%" />
                             <div class="text">Gambar Kegiatan 3</div>
                         </div>
+                        @endif
+                        @if(!empty($value->gambar4))
                         <div class="mySlides">
                             <img src="{{asset('images/'.$value->gambar4)}}" style="width: 100%" />
                             <div class="text">Gambar Kegiatan 4</div>
                         </div>
+                        @endif
+                        @if(!empty($value->gambar5))
                         <div class="mySlides">
                             <img src="{{asset('images/'.$value->gambar5)}}" style="width: 100%" />
                             <div class="text">Gambar Kegiatan 5</div>
                         </div>
-
+                        @endif
                         <!-- Next and previous buttons -->
                         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                         <a class="next" onclick="plusSlides(1)">&#10095;</a>
                     </div>
                     <div style="text-align:center; margin: 1em">
                         <span class="dot" onclick="currentSlide(1)"></span>
+                        @if(!empty($value->gambar2))
                         <span class="dot" onclick="currentSlide(2)"></span>
+                        @endif
+                        @if(!empty($value->gambar3))
                         <span class="dot" onclick="currentSlide(3)"></span>
+                        @endif
+                        @if(!empty($value->gambar4))
                         <span class="dot" onclick="currentSlide(4)"></span>
+                        @endif
+                        @if(!empty($value->gambar5))
                         <span class="dot" onclick="currentSlide(5)"></span>
+                        @endif
                     </div>
                     <div class="col-md-12">
                         <p style="font-size: 15pt">
