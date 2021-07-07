@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\post;
 use Illuminate\Http\Request;
 use File;
-
+use Carbon\Carbon;
 class post_controller extends Controller
 {
     /**
@@ -50,6 +50,18 @@ class post_controller extends Controller
     public function create()
     {
         //
+    }
+
+    public function berita_terbaru($id){
+        $posts = post::where('is_terbaru', '1')->orderBy('tgl_terbaru')->first();
+        $posts->is_terbaru = 0;
+        $posts->tgl_terbaru = NULL;
+        $posts->save();
+        $post = post::find($id);
+        $post->is_terbaru = '1';
+        $post->tgl_terbaru = Carbon::now();
+        $post->save();
+        return back();
     }
 
     /**

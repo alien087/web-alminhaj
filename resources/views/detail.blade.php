@@ -255,7 +255,9 @@
 
                             <a href="{{route('edit_post', ['id' => $value->id])}}" class="btn btn-primary btn-lg">Edit</a>
                             <a href="#" class="btn btn-secondary btn-lg" style="margin-left: 2em;" data-toggle="modal" data-target="#deleteModal">Hapus</a>
-
+                            @if($value->is_terbaru!='1')
+                            <a href="{{route('terbaru', ['id' => $value->id])}}" class="btn btn-primary btn-lg" style="margin-top: 2em;" >Jadikan Berita Terbaru</a>
+                            @endif
                         </div>
 
                     </div>

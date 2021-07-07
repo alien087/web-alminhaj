@@ -213,58 +213,22 @@
                 <div class="container">
                     <div class="row row-bottom-padded-lg">
 
+                       
+                        @foreach($post as $key=>$value)
                         <div class="col-lg-3 col-md-4 col-sm-6">
                             <div class="fh5co-blog animate-box">
-                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
+                                <a href="{{route('detail', ['id' => $value->id])}}"><img class="img-responsive" src="{{asset('images/'. $value->gambar1)}}" alt=""></a>
                                 <div class="blog-text">
                                     <div class="prod-title">
-                                        <h3><a href="/detailss" #>Berita Terbaru 1</a></h3>
-                                        <span class="posted_by">Sep. 15th</span>
-                                        <p>Contoh isi</p>
-                                        <p><a href="/detailss">Learn More...</a></p>
+                                        <h3><a href="{{route('detail', ['id' => $value->id])}}" #>{{$value->judul}}</a></h3>
+                                        <span class="posted_by">{!!\Illuminate\Support\Str::limit($value->created_at, 10, $end='')!!}</span>
+                                        <p>{!!\Illuminate\Support\Str::limit($value->isi, 25, $end='...')!!}</p>
+                                        <p><a href="{{route('detail', ['id' => $value->id])}}">Learn More...</a></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="fh5co-blog animate-box">
-                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
-                                <div class="blog-text">
-                                    <div class="prod-title">
-                                        <h3><a href="/detailss" #>Berita Terbaru 2</a></h3>
-                                        <span class="posted_by">Sep. 15th</span>
-                                        <p>Contoh isi</p>
-                                        <p><a href="/detailss">Learn More...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="fh5co-blog animate-box">
-                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
-                                <div class="blog-text">
-                                    <div class="prod-title">
-                                        <h3><a href="/detailss" #>Berita Terbaru 3</a></h3>
-                                        <span class="posted_by">Sep. 15th</span>
-                                        <p>Contoh isi</p>
-                                        <p><a href="/detailss">Learn More...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-3 col-md-4 col-sm-6">
-                            <div class="fh5co-blog animate-box">
-                                <a href="/detailss"><img class="img-responsive" src="{{asset('images/123.png')}}" alt=""></a>
-                                <div class="blog-text">
-                                    <div class="prod-title">
-                                        <h3><a href="/detailss" #>Berita Terbaru 4</a></h3>
-                                        <span class="posted_by">Sep. 15th</span>
-                                        <p>Contoh isi</p>
-                                        <p><a href="/detailss">Learn More...</a></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
 
 
 

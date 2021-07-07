@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
   
 use Illuminate\Http\Request;
-   
+
+use App\post;
 class HomeController extends Controller
 {
     /**
@@ -23,7 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index_2');
+        $post = post::where('is_terbaru', '1')->get();
+        return view('index_2', ['post' => $post]);
     }
   
     /**

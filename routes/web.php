@@ -22,9 +22,7 @@ Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi');
 Route::get('/pengajian', 'post_controller@index_pengajian')->name('pengajian');
 
 Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth')->middleware('is_verified');
-Route::get('/', function () {
-    return view('index_2');
-})->name('index');
+Route::get('/', 'HomeController@index')->name('index');
 
 
 Route::get('/about', function () {
@@ -32,6 +30,7 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/detail_post/{id}', 'post_controller@show_post')->name('detail');
+Route::get('/detail_posts/{id}', 'post_controller@berita_terbaru')->name('terbaru');
 
 Route::get('/detail/{id}', 'p_mengaji_controller@show')->middleware('auth')->name('detail_video')->middleware('is_verified');
 
