@@ -22,7 +22,7 @@ Route::get('/berbagi', 'post_controller@index_berbagi')->name('berbagi');
 Route::get('/pengajian', 'post_controller@index_pengajian')->name('pengajian');
 
 Route::get('/mengaji', 'p_mengaji_controller@index')->name('mengaji')->middleware('auth')->middleware('is_verified');
-Route::get('/', 'HomeController@index')->name('index');
+Route::get('/', 'post_controller@home')->name('index');
 
 
 Route::get('/about', function () {

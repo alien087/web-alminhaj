@@ -8,6 +8,11 @@ use File;
 use Carbon\Carbon;
 class post_controller extends Controller
 {
+    public function home()
+    {
+        $post = post::where('is_terbaru', '1')->get();
+        return view('index_2', ['post' => $post]);
+    }
     /**
      * Display a listing of the resource.
      *
