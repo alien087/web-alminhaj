@@ -20,7 +20,7 @@ class post_controller extends Controller
     }
     public function index_pengajian()
     {
-        $post = post::where('kategori', 4)->aginate(9);
+        $post = post::where('kategori', 4)->paginate(9);
         return view('pengajian', ['post' => $post]);
     }
 

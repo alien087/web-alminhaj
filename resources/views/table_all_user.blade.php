@@ -150,7 +150,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
-                                <img class="img-profile rounded-circle" src="{{asset('images/undraw_profile.svg')}}">
+                                
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -196,6 +196,8 @@
                                             <th>Last Login</th>
                                             <th>Jadikan User Biasa</th>
                                             <th>Jadikan Admin</th>
+                                            <th>Non-Aktifkan</th>
+                                            <th>Aktifkan</th>
 
                                         </tr>
                                     </thead>
@@ -231,6 +233,30 @@
                                             </td>
                                             @else
                                             <td>Akun ini Admin</td>
+                                            @endif
+                                            @if($value->is_aktif=='1')
+                                            <td><a href="{{route('edit_user_nonaktif',  ['id' => $value->id])}}" class="btn btn-danger btn-icon-split btn-sm">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-trash"></i>
+                                                    </span>
+                                                    <span class="text">Non-Aktfikan User</span>
+                                                </a>
+
+                                            </td>
+                                            @else
+                                            <td>User Sudah Dinonaktifkan</td>
+                                            @endif
+                                            @if($value->is_aktif=='0')
+                                            <td><a href="{{route('edit_user_aktif',  ['id' => $value->id])}}" class="btn btn-info btn-icon-split btn-sm">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-edit"></i>
+                                                    </span>
+                                                    <span class="text">Aktfikan User</span>
+                                                </a>
+
+                                            </td>
+                                            @else
+                                            <td>User Masih Aktif</td>
                                             @endif
                                         </tr>
                                         @endforeach
