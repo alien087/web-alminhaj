@@ -296,7 +296,7 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
     <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/28.0.0/classic/ckeditor.js"></script>
+    <script src="{{asset('js/ckeditor.js')}}"></script>
     <script>
         ClassicEditor
             .create(document.querySelector('#editor'), {
