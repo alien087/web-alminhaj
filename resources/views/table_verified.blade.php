@@ -65,6 +65,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/dashboard_table">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>

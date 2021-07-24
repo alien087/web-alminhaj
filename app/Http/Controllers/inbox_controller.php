@@ -23,6 +23,16 @@ class inbox_controller extends Controller
             return view('inbox', ['inbox' => $inbox]);
         }
     }
+    public function index_outbox()
+    {
+        if (Auth::user()->type_user == '1') {
+            $outbox = inbox::where('pengirim', 'Admin')->orWhere('pengirim', Auth::user()->email)->orderByDesc('created_at')->paginate(10);
+            return view('outbox', ['outbox' => $outbox]);
+        } else {
+            $outbox = inbox::where('pengirim', Auth::user()->email)->orderByDesc('created_at')->paginate(10);
+            return view('outbox', ['outbox' => $outbox]);
+        }
+    }
     
     /**
      * Show the form for creating a new resource.
@@ -62,6 +72,11 @@ class inbox_controller extends Controller
         $inbox = inbox::where('id', $id)->get();
         return view('inbox_detail', ['inbox' => $inbox]);
     }
+    public function show_outbox($id)
+    {
+        $outbox = inbox::where('id', $id)->get();
+        return view('outbox_detail', ['outbox' => $outbox]);
+    }
 
     public function balas(Request $request, $id)
     {
@@ -70,7 +85,7 @@ class inbox_controller extends Controller
         $inbox->judul = $inbox_1->judul;
         $inbox->isi = $request->editor;
         $inbox->penerima = $inbox_1->pengirim;
-        $inbox->pengirim = $inbox_1->penerima;
+        $inbox->pengirim = Auth::user()->email;
         $inbox->save();
         return back()->with('success', 'Selamat, pesan berhasil dikirim.');
     }

@@ -61,9 +61,15 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item active">
-                <a class="nav-link" href="/verified_user">
+                <a class="nav-link" href="/inbox">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
                 </a>
             </li>
             <li class="nav-item">

@@ -9,14 +9,18 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Al Minhaj - Dashboard</title>
+    <title>Al Minhaj - Tables</title>
 
-    <!-- Custom fonts for this template-->
+    <!-- Custom fonts for this template -->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
+    <!-- Custom styles for this template -->
     <link href="{{asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
+    <link href="{{asset('css/chat.css')}}" rel="stylesheet">
+
+    <!-- Custom styles for this page -->
+    <link href="{{asset('vendor/datatables/dataTables.bootstrap4.min.css')}}" rel="stylesheet">
 
 </head>
 
@@ -29,6 +33,7 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
+            @if(Auth::user()->type_user == '1')
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
                 <div class="sidebar-brand-icon rotate-n-15">
                     <i class="fas fa-laugh-wink"></i>
@@ -40,7 +45,7 @@
             <hr class="sidebar-divider my-0">
 
             <!-- Nav Item - Dashboard -->
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="/dashboard">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
@@ -51,7 +56,7 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                User Control
+                Interface
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -61,7 +66,7 @@
                     <span>Inbox</span>
                 </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
                 <a class="nav-link" href="/outbox">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Pesan Terkirim</span>
@@ -72,15 +77,44 @@
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>
                 </a>
+
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/all_user">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Semua User Aktif</span>
                 </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/verified_user">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Verifikasi User</span>
                 </a>
             </li>
+            @else
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">Home</div>
+            </a>
+
+            <hr class="sidebar-divider my-0">
+
+            <li class="nav-item ">
+                <a class="nav-link" href="/inbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
+                </a>
+            </li>
+            @endif
+
 
             <!-- Nav Item - Utilities Collapse Menu -->
 
@@ -97,7 +131,7 @@
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
             </div>
 
-
+            <!-- Sidebar Message -->
 
         </ul>
         <!-- End of Sidebar -->
@@ -112,9 +146,11 @@
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
                     <!-- Sidebar Toggle (Topbar) -->
-                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
-                        <i class="fa fa-bars"></i>
-                    </button>
+                    <form class="form-inline">
+                        <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                    </form>
 
                     <!-- Topbar Search -->
 
@@ -151,8 +187,8 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"> {{ Auth::user()->name }}</span>
-                                
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">{{ Auth::user()->name }}</span>
+
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -161,7 +197,7 @@
                                     Edit Profile
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>
@@ -169,7 +205,6 @@
                         </li>
 
                     </ul>
-
                 </nav>
                 <!-- End of Topbar -->
 
@@ -177,16 +212,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
+
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Edit Post</h1>
+                        <h1 class="h3 mb-2 text-gray-800">Inbox</h1>
 
                     </div>
-
-                    <!-- Content Row -->
-
-                    <!-- Content Row -->
-
-
                     @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
                         <button type="button" class="close" data-dismiss="alert">×</button>
@@ -194,34 +224,19 @@
                     </div>
 
                     @endif
-                    <!-- Content Row -->
-                    <div class="row">
 
-                        <!-- Content Column -->
-                        <div class="col-lg-6 mb-4">
-                            @foreach($post as $key=>$value)
-                            <form action="{{ route('edits_mengaji', ['id' => $value->id]) }}" method="POST" enctype="multipart/form-data">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h1 class="h5 mb-0 text-gray-800">Judul*</h1>
-                                        <input type="text" name="judul" class="form-control" style="margin-top: 1em;" required value="{{$value->judul}}">
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Isi*</h1>
-                                        <textarea class="form-control " id="editor" name="editor">{{$value->isi}}</textarea>
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">Link Youtube*</h1>
-                                        <input type="text" name="link_youtube" class="form-control" style="margin-top: 1em;" required value="{{$value->link}}">
+                    <!-- DataTales Example -->
+                    <div class="card shadow mb-4">
+                        <div style="padding-left: 1em;  padding-right: 1em;" >
+                            @foreach($outbox as $key=>$value)
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Kepada : <b> {{$value->penerima}} </b></h6>
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Judul : <b>{{$value->judul}} </b> </h6>
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Isi Pesan : </h6>
+                            <p style="font-size: 16pt;">{!!$value->isi!!}</p>
 
-                                        <h1 class="h5 mb-0 text-gray-800" style="margin-top: 1em;">*Wajib Diisi</h1>
-                                        <button type="submit" class="btn btn-success" style="margin-top: 2em;">Simpan</button>
-                                    </div>
-                                </div>
-                                @endforeach
-                            </form>
 
-                            <!-- Color System -->
-
+                            @endforeach
                         </div>
-
 
                     </div>
 
@@ -235,7 +250,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center my-auto">
-                        <p>Copyright Majelis Taklim Al Minhaj</p>
+                        <span>Copyright Majelis Taklim Al Minhaj</span>
                     </div>
                 </div>
             </footer>
@@ -275,7 +290,6 @@
         </div>
     </div>
 
-
     <!-- Bootstrap core JavaScript-->
     <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -287,11 +301,14 @@
     <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
 
     <!-- Page level plugins -->
-    <script src="{{asset('vendor/chart.js/Chart.min.js')}}"></script>
+
+
+    <!-- Page level plugins -->
+    <script src="{{asset('vendor/datatables/jquery.dataTables.min.js')}}"></script>
+    <script src="{{asset('vendor/datatables/dataTables.bootstrap4.min.js')}}"></script>
 
     <!-- Page level custom scripts -->
-    <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
-    <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
+    <script src="{{asset('js/demo/datatables-demo.js')}}"></script>
     <script src="{{asset('js/ckeditor.js')}}"></script>
     <script>
         ClassicEditor
@@ -302,7 +319,6 @@
                 console.error(error);
             });
     </script>
-
 
 </body>
 

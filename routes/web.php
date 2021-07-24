@@ -57,8 +57,10 @@ Route::get('/detailss', function () {
     return view('detail_dummy');
 })->name('ddummy');
 
-Route::get('/inbox','inbox_controller@index' )->name('inbox')->middleware('auth');
+Route::get('/outbox','inbox_controller@index_outbox' )->name('outbox')->middleware('auth');
+Route::get('/outbox/{id}', 'inbox_controller@show_outbox')->name('outbox_detail')->middleware('auth');
 
+Route::get('/inbox','inbox_controller@index' )->name('inbox')->middleware('auth');
 Route::get('/inbox/{id}', 'inbox_controller@show')->name('inbox_detail')->middleware('auth');
 Route::post('/inbox/{id}', 'inbox_controller@balas')->name('inbox_balas')->middleware('auth');
 

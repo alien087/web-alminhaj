@@ -67,6 +67,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/dashboard_table">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>
@@ -99,6 +105,12 @@
                 <a class="nav-link" href="/inbox">
                     <i class="fas fa-fw fa-envelope"></i>
                     <span>Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
                 </a>
             </li>
             @endif
@@ -215,18 +227,22 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        @foreach($inbox as $key=>$value)
-                        <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Dari : {{$value->pengirim}}</h6>
-                        <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Isi Pesan : </h6>
-                        <p style="font-size: 16pt;">{!!$value->isi!!}</p>
+                        <div style="padding-left: 1em; padding-right: 1em;">
+                            @foreach($inbox as $key=>$value)
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Dari : <b> {{$value->pengirim}} </b></h6>
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Judul : <b>{{$value->judul}} </b> </h6>
+                            <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Isi Pesan : </h6>
+                            <p style="font-size: 16pt;">{!!$value->isi!!}</p>
 
-                        <form action="{{route('inbox_balas', ['id' => $value->id])}}" method="POST" enctype="multipart/form-data">
-                            @csrf
-                            <h6 class="h6 mb-0 text-gray-800" style="margin-top: 1em;">Balas Pesan</h6>
-                            <textarea class="form-control " id="editor" name="editor"></textarea>
-                            <button type="submit" class="btn btn-success" style="float:right; width:100%">Kirim</button>
-                        </form>
-                        @endforeach
+                            <form action="{{route('inbox_balas', ['id' => $value->id])}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <h6 class="h6 mb-0 text-gray-800" style="margin-top: 1em;">Balas Pesan</h6>
+                                <textarea class="form-control " id="editor" name="editor"></textarea>
+                                <button type="submit" class="btn btn-success" style="float:right; width:100%; margin-bottom: 1em; margin-top:1em;">Kirim</button>
+                            </form>
+                            @endforeach
+                        </div>
+
                     </div>
 
                 </div>
