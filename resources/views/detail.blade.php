@@ -144,6 +144,7 @@
                                     </a>
                                     <ul class="fh5co-sub-menu">
                                         <li><a href="/dashboard">Dashboard</a></li>
+                                        <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -163,7 +164,8 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="fh5co-sub-menu">
-
+                                        <li><a href="/inbox">Inbox</a></li>
+                                        <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                                 {{ __('Logout') }}
@@ -256,7 +258,7 @@
                             <a href="{{route('edit_post', ['id' => $value->id])}}" class="btn btn-primary btn-lg">Edit</a>
                             <a href="#" class="btn btn-secondary btn-lg" style="margin-left: 2em;" data-toggle="modal" data-target="#deleteModal">Hapus</a>
                             @if($value->is_terbaru!='1')
-                            <a href="{{route('terbaru', ['id' => $value->id])}}" class="btn btn-primary btn-lg" style="margin-top: 2em;" >Jadikan Berita Terbaru</a>
+                            <a href="{{route('terbaru', ['id' => $value->id])}}" class="btn btn-primary btn-lg" style="margin-top: 2em;">Jadikan Berita Terbaru</a>
                             @endif
                         </div>
 

@@ -163,6 +163,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="fh5co-sub-menu">
+                                        <li><a href="/inbox">Inbox</a></li>
                                         <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -293,8 +294,8 @@
                     </div>
                     <div class="container">
                         <div class="container_iframe">
-                           
-                            <iframe  class="responsive-iframe " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.56188786327!2d105.32482725!3d-5.39555665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edc67a3fc1d1%3A0x1765be8317573b07!2s45%2C%20Gg.%20H.%20Joko%20No.1%2C%20RT.7%2FRW.4%2C%20Lenteng%20Agung%2C%20Kec.%20Jagakarsa%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012630!5e0!3m2!1sen!2sid!4v1625661816428!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+                            <iframe class="responsive-iframe " src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15888.56188786327!2d105.32482725!3d-5.39555665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69edc67a3fc1d1%3A0x1765be8317573b07!2s45%2C%20Gg.%20H.%20Joko%20No.1%2C%20RT.7%2FRW.4%2C%20Lenteng%20Agung%2C%20Kec.%20Jagakarsa%2C%20Kota%20Jakarta%20Selatan%2C%20Daerah%20Khusus%20Ibukota%20Jakarta%2012630!5e0!3m2!1sen!2sid!4v1625661816428!5m2!1sen!2sid" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>

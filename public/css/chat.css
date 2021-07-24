@@ -1,0 +1,65 @@
+.mailbox {
+    margin: 0px auto -100px;
+    position: relative;
+    background: #CCDDED;
+    border-radius: 0px 5px 0px 0px;
+    width: 90%; max-width: 960px;
+  }
+  
+  
+  
+  .messages {
+    padding: 10px 10px 10px 210px;
+    width: 100%;
+  }
+  
+
+  
+  input[name=search] {
+    display: block;
+    float: right;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    background: #EEE;
+    font: 14px Tahoma, Geneva, sans-serif;
+    border-radius: 5px;
+  }
+  
+  input[name=search]:focus {
+    outline: none;
+  }
+  
+  .message {
+    clear: both;
+    margin-bottom: 5px;
+    position: relative;
+    padding: 5px;
+    background: #bbd0e4;
+    border-radius: 5px;
+  }
+  
+  .message input {
+    position: absolute;
+    top: 8px; left: 10px;
+    width: 30px;
+  }
+  
+  .message .sender {
+    display: block;
+    position: absolute;
+    left: 40px;
+    color: #000;
+    font-weight: bold;
+    width: 20%;
+  }
+  
+  .message .title {
+    display: inline-block;
+    padding-left: 20%;
+    width: 100%;
+  }
+  
+  .message .date {
+    position: absolute;
+    right: 10px;
+  }

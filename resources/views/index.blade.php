@@ -148,6 +148,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="fh5co-sub-menu">
+                                        <li><a href="/inbox">Inbox</a></li>
                                         <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -230,20 +231,20 @@
                 </div>
             </div>
 
-           
 
 
 
-            
+
+
             <!-- fh5co-content-section -->
 
-            
-                
+
+
 
             <!-- END What we do -->
 
 
-            
+
             <!-- fh5co-blog-section -->
             <footer>
                 <div id="footer">

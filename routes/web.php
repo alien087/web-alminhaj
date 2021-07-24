@@ -57,6 +57,19 @@ Route::get('/detailss', function () {
     return view('detail_dummy');
 })->name('ddummy');
 
+Route::get('/inbox','inbox_controller@index' )->name('inbox')->middleware('auth');
+
+Route::get('/inbox/{id}', 'inbox_controller@show')->name('inbox_detail')->middleware('auth');
+Route::post('/inbox/{id}', 'inbox_controller@balas')->name('inbox_balas')->middleware('auth');
+
+Route::get('/kirim_pesan', function () {
+    return view('inbox_kirim');
+})->name('inbox_kirim');
+
+Route::post('/kirim_pesan', 'inbox_controller@store')->middleware('auth')->name('kirim');
+
+
+
 Auth::routes();
 Route::get('/register_user', function () {
     return view('auth/register');

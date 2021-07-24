@@ -56,6 +56,12 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
             <li class="nav-item">
+                <a class="nav-link" href="/inbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Inbox</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="/dashboard_table">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>User Non Aktif</span>
