@@ -93,8 +93,8 @@
             </li>
             @else
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-arrow-left"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Home</div>
             </a>
@@ -227,7 +227,7 @@
 
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div style="padding-left: 1em;  padding-right: 1em;" >
+                        <div style="padding-left: 1em;  padding-right: 1em;">
                             @foreach($outbox as $key=>$value)
                             <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Kepada : <b> {{$value->penerima}} </b></h6>
                             <h6 class="h6 mb-0 text-gray-1000" style="margin-top: 1em;">Judul : <b>{{$value->judul}} </b> </h6>
