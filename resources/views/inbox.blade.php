@@ -216,6 +216,15 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         @foreach($inbox as $key=>$value)
+                        @if($value->dibaca=='1')
+                        <a href="{{route('inbox_detail', ['id' => $value->id])}}">
+                            <div class="message" style="background: #7f9cb8;">
+                                <span class="sender">{{$value->pengirim}}</span>
+                                <span class="date">{!!\Illuminate\Support\Str::limit($value->created_at, 10, $end='')!!}</span>
+                                <span class="title">{{$value->judul}}</span>
+                            </div>
+                        </a>
+                        @else
                         <a href="{{route('inbox_detail', ['id' => $value->id])}}">
                             <div class="message">
                                 <span class="sender">{{$value->pengirim}}</span>
@@ -223,9 +232,10 @@
                                 <span class="title">{{$value->judul}}</span>
                             </div>
                         </a>
+                        @endif
                         @endforeach
 
-                        
+
                     </div>
 
                 </div>

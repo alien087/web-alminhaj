@@ -69,6 +69,10 @@ class inbox_controller extends Controller
      */
     public function show($id)
     {
+        $inbox = inbox::find($id);
+        $inbox->dibaca = '1';
+        $inbox->save();
+        
         $inbox = inbox::where('id', $id)->get();
         return view('inbox_detail', ['inbox' => $inbox]);
     }
