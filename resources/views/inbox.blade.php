@@ -107,6 +107,12 @@
                     <span>Inbox</span>
                 </a>
             </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/outbox">
+                    <i class="fas fa-fw fa-envelope"></i>
+                    <span>Pesan Terkirim</span>
+                </a>
+            </li>
             @endif
 
 
