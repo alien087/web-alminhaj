@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Al Minhaj - Tables</title>
+    <title>Al Minhaj - Inbox</title>
 
     <!-- Custom fonts for this template -->
     <link href="{{asset('vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">
@@ -93,8 +93,8 @@
             </li>
             @else
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-arrow-left"></i>
                 </div>
                 <div class="sidebar-brand-text mx-3">Home</div>
             </a>
@@ -240,7 +240,7 @@
                                     <div class="col-md-12">
                                         <h1 class="h5 mb-0 text-gray-800">Pengirim</h1>
                                         <input type="email" name="pengirim" class="form-control" style="margin-bottom: 1em; margin-top: 1em;" value="{{Auth::user()->email}}" readonly>
-                                        
+
                                         @if(Auth::user()->type_user == '1')
                                         <h1 class="h5 mb-0 text-gray-800">Email Penerima</h1>
                                         <input type="email" name="penerima" class="form-control" style="margin-bottom: 1em; margin-top: 1em;" required>

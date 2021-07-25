@@ -163,7 +163,7 @@
                                         {{ Auth::user()->name }}
                                     </a>
                                     <ul class="fh5co-sub-menu">
-                                        <li><a href="/inbox">Inbox</a></li>
+                                        <li><a href="/inbox">Pesan</a></li>
                                         <li><a href="{{route('edit_user', ['id' => Auth::user()->id])}}">Edit Profile</a></li>
                                         <li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -233,50 +233,23 @@
                             <div class="col-md-12">
                                 <ul id="fh5co-portfolio-list">
 
-                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); ">
-                                        <a href="#" class="color-3">
-                                            <div class="case-studies-summary">
-                                                <span>Give Love</span>
-                                                <h2>Donation is caring</h2>
-                                            </div>
-                                        </a>
+                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/about_1.jpeg); ">
+                                        
                                     </li>
 
-                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
-                                        <a href="#" class="color-4">
-                                            <div class="case-studies-summary">
-                                                <span>Give Love</span>
-                                                <h2>Donation is caring</h2>
-                                            </div>
-                                        </a>
+                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/about_2.jpeg); ">
+                                        
                                     </li>
 
-                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_1.jpg); ">
-                                        <a href="#" class="color-5">
-                                            <div class="case-studies-summary">
-                                                <span>Give Love</span>
-                                                <h2>Donation is caring</h2>
-                                            </div>
-                                        </a>
+                                    <li class="one-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/about_3.jpeg); ">
+                                       
                                     </li>
-                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/cover_bg_3.jpg); ">
-                                        <a href="#" class="color-6">
-                                            <div class="case-studies-summary">
-                                                <span>Give Love</span>
-                                                <h2>Donation is caring</h2>
-                                            </div>
-                                        </a>
+                                    <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url(images/about_4.png); ">
+                                        
                                     </li>
                                 </ul>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-4 col-md-offset-4 text-center animate-box">
-                                <a href="#" class="btn btn-primary btn-lg">See Gallery</a>
-                            </div>
-                        </div>
-
 
                     </div>
                 </div>
