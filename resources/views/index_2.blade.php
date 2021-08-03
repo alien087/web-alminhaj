@@ -192,7 +192,7 @@
                 <div class="fh5co-overlay"></div>
                 <div class="fh5co-cover text-center" data-stellar-background-ratio="0.5" style="background-image: url(images/cover_bg_1.jpg);">
                     <div class="desc animate-box">
-                        <h2><strong>Media informasi <br> Majelis Taklim Al Minhaj</strong></h2>
+                        <h2><strong>Majelis Taklim Al Minhaj</strong></h2>
                         <span></span>
                         @guest
                         <span><a class="btn btn-primary btn-lg" href="/register">Gabung Bersama Kami</a></span>

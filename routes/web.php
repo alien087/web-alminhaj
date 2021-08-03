@@ -49,6 +49,8 @@ Route::get('/dashboard_tables/{id}', 'admin_controller@edit_aktif')->middleware(
 Route::get('/all_user', 'admin_controller@index_all')->middleware('auth')->middleware('is_admin')->name('table_all_user');
 Route::get('/all_user/{id}', 'admin_controller@edit_admin')->middleware('auth')->middleware('is_admin')->name('edit_admin');
 Route::get('/all_users/{id}', 'admin_controller@edit_biasa')->middleware('auth')->middleware('is_admin')->name('edit_biasa');
+Route::get('/all_user_aktif/{id}', 'admin_controller@edit_2')->middleware('auth')->middleware('is_admin')->name('edit_user_nonaktif_2');
+Route::get('/all_user_nonaktif/{id}', 'admin_controller@edit_aktif_2')->middleware('auth')->middleware('is_admin')->name('edit_user_aktif_2');
 
 Route::get('/verified_user', 'admin_controller@index_verified')->middleware('auth')->middleware('is_admin')->name('table_verified');
 Route::get('/verified_user/{id}', 'admin_controller@edit_verified')->middleware('auth')->middleware('is_admin')->name('edit_verified');

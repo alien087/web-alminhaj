@@ -247,7 +247,7 @@
                                             <td>Akun ini Admin</td>
                                             @endif
                                             @if($value->is_aktif=='1')
-                                            <td><a href="{{route('edit_user_nonaktif',  ['id' => $value->id])}}" class="btn btn-danger btn-icon-split btn-sm">
+                                            <td><a href="{{route('edit_user_nonaktif_2',  ['id' => $value->id])}}" class="btn btn-danger btn-icon-split btn-sm">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-trash"></i>
                                                     </span>
@@ -259,7 +259,7 @@
                                             <td>User Sudah Dinonaktifkan</td>
                                             @endif
                                             @if($value->is_aktif=='0')
-                                            <td><a href="{{route('edit_user_aktif',  ['id' => $value->id])}}" class="btn btn-info btn-icon-split btn-sm">
+                                            <td><a href="{{route('edit_user_aktif_2',  ['id' => $value->id])}}" class="btn btn-info btn-icon-split btn-sm">
                                                     <span class="icon text-white-50">
                                                         <i class="fas fa-edit"></i>
                                                     </span>

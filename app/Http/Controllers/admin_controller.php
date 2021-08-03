@@ -16,7 +16,7 @@ class admin_controller extends Controller
     }
     public function index_all()
     {
-       $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
+       $post = user::where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
     public function index_verified()
@@ -35,6 +35,18 @@ class admin_controller extends Controller
         $post = User::whereDate('last_login', '<', $diffmonth)->where('type_user', '0')->get();
         return view('table_user', ['post' => $post]);
     }
+
+    public function edit_2($id)
+    {
+        DB::table('users')->where('id', $id)->update([
+            'is_aktif' => '0'
+        ]);
+
+        $post = user::where('is_verified', '1')->get();
+        return view('table_all_user', ['post' => $post]);
+    }
+
+
     public function edit_verified($id)
     {
         DB::table('users')->where('id', $id)->update([
@@ -55,13 +67,23 @@ class admin_controller extends Controller
         return view('table_user', ['post' => $post]);
     }
 
+    public function edit_aktif_2($id)
+    {
+        DB::table('users')->where('id', $id)->update([
+            'is_aktif' => '1'
+        ]);
+
+        $post = user::where('is_verified', '1')->get();
+        return view('table_all_user', ['post' => $post]);
+    }
+
     public function edit_admin($id)
     {
         DB::table('users')->where('id', $id)->update([
             'type_user' => '1'
         ]);
 
-        $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
+        $post = user::where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
 
@@ -71,7 +93,7 @@ class admin_controller extends Controller
             'type_user' => '0'
         ]);
 
-        $post = user::where('is_aktif', '1')->where('is_verified', '1')->get();
+        $post = user::where('is_verified', '1')->get();
         return view('table_all_user', ['post' => $post]);
     }
 }

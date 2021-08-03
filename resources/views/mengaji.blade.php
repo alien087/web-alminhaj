@@ -201,8 +201,8 @@
                 <div class="container">
                     <div class="row">
                         <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
-                            <h3>Motto Mengaji Online</h3>
-                            <p>Penjelasan Singkat Tentang Mengaji Online</p>
+                            <h3>Mengaji Online</h3>
+                           
                         </div>
                     </div>
                 </div>
